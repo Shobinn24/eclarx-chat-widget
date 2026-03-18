@@ -121,7 +121,7 @@ export default function ChatWidget({ config }) {
             <div className="eclarx-header-info">
               <div className="eclarx-avatar">AI</div>
               <div>
-                <div className="eclarx-header-title">Chat Assistant</div>
+                <div className="eclarx-header-title">FirmChat</div>
                 <div className="eclarx-header-status">Online</div>
               </div>
             </div>
@@ -177,7 +177,7 @@ export default function ChatWidget({ config }) {
 
           {/* Watermark */}
           <div className="eclarx-watermark">
-            Powered by <strong>E-Clarx</strong>
+            Powered by <strong>FirmChat</strong>
           </div>
         </div>
       )}
