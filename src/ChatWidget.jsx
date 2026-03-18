@@ -40,7 +40,7 @@ export default function ChatWidget({ config }) {
     {
       role: "assistant",
       content:
-        "Hi! How can I help you today? I can answer questions about our firm or help you schedule a consultation.",
+        "Welcome to E-Clarx! Looking to build a project or need an AI assistant for your business? Tell us what you have in mind and we'll show you what's possible.",
     },
   ]);
   const [input, setInput] = useState("");
