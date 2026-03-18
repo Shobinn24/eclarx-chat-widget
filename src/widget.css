@@ -1,0 +1,276 @@
+/* ═══════════════════════════════════════════════
+   E-Clarx Chat Widget — Embeddable Styles
+   All classes prefixed with eclarx- to avoid conflicts
+   ═══════════════════════════════════════════════ */
+
+/* Reset for widget container */
+#eclarx-chat-root * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ── Floating Action Button ── */
+.eclarx-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.eclarx-fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}
+.eclarx-fab-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+/* ── Chat Panel ── */
+.eclarx-panel {
+  position: fixed;
+  bottom: 96px;
+  right: 24px;
+  width: 380px;
+  height: 520px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  z-index: 99998;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: eclarx-slide-up 0.25s ease-out;
+}
+
+@keyframes eclarx-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Header ── */
+.eclarx-header {
+  padding: 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.eclarx-header-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.eclarx-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+.eclarx-header-title {
+  font-weight: 600;
+  font-size: 15px;
+}
+.eclarx-header-status {
+  font-size: 12px;
+  opacity: 0.8;
+}
+.eclarx-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+.eclarx-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Messages Area ── */
+.eclarx-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #f8f9fb;
+}
+
+.eclarx-msg {
+  display: flex;
+}
+.eclarx-msg-user {
+  justify-content: flex-end;
+}
+.eclarx-msg-assistant {
+  justify-content: flex-start;
+}
+
+.eclarx-bubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+.eclarx-bubble-user {
+  background: #1a365d;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+.eclarx-bubble-assistant {
+  background: #fff;
+  color: #333;
+  border: 1px solid #e2e8f0;
+  border-bottom-left-radius: 4px;
+}
+
+/* ── Typing Indicator ── */
+.eclarx-typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+}
+.eclarx-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #a0aec0;
+  animation: eclarx-bounce 1.4s infinite ease-in-out;
+}
+.eclarx-dot:nth-child(2) {
+  animation-delay: 0.16s;
+}
+.eclarx-dot:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes eclarx-bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.6);
+    opacity: 0.4;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ── Input Area ── */
+.eclarx-input-area {
+  padding: 12px 16px 8px;
+  background: #fff;
+  border-top: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+.eclarx-input-wrap {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.eclarx-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.eclarx-input:focus {
+  border-color: #1a365d;
+}
+.eclarx-input:disabled {
+  background: #f7fafc;
+}
+
+.eclarx-send {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+.eclarx-send:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.eclarx-send:not(:disabled):hover {
+  opacity: 0.85;
+}
+
+.eclarx-char-count {
+  text-align: right;
+  font-size: 11px;
+  color: #a0aec0;
+  margin-top: 4px;
+}
+
+/* ── Watermark ── */
+.eclarx-watermark {
+  text-align: center;
+  padding: 6px 0 10px;
+  font-size: 11px;
+  color: #a0aec0;
+  background: #fff;
+  flex-shrink: 0;
+}
+.eclarx-watermark strong {
+  color: #718096;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 480px) {
+  .eclarx-panel {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .eclarx-fab {
+    bottom: 16px;
+    right: 16px;
+  }
+}
