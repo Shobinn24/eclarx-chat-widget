@@ -7,7 +7,9 @@ export default defineConfig({
   plugins: [react(), cssInjectedByJsPlugin()],
   build: {
     rollupOptions: {
-      input: resolve(__dirname, "src/main.jsx"),
+      input: {
+        main: resolve(__dirname, "index.html"),
+      },
       output: {
         entryFileNames: "chatbot.js",
         manualChunks: undefined,
